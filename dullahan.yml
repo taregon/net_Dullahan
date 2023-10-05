@@ -1,0 +1,173 @@
+# Admin password: deluge
+# flaresolverr puede funcionar con Prometheus https://github.com/FlareSolverr/FlareSolverr#environment-variables
+# https://academy.pointtosource.com/containers/sonarr-radarr-prowlarr/
+# https://blog.ayjc.net/posts/heimdall/
+# https://github.com/FlareSolverr/FlareSolverr/wiki/How-to-enable-debug-and-html-trace
+# https://github.com/TechSquidTV/UltimateHomeServer
+# https://raw.githubusercontent.com/TRaSH-/Guides-Synology-Templates/main/docker-compose/docker-compose.yml
+# https://www.rapidseedbox.com/blog/flaresolverr-guide
+# https://www.zenrows.com/blog/flaresolverr#set-up-with-jackett
+# https://github.com/fr3fou/home/blob/main/apps/prowlarr/prowlarr.yaml
+# https://github.com/navilg/media-stack
+# https://www.manelrodero.com/blog/instalacion-de-radarr-en-docker
+# https://technotim.live/posts/meet-file-browser/
+# NETWORKS =======================
+networks:
+  default:
+    name: net_dullahan
+    external: true
+
+# SERVICES =======================
+services:
+#
+#  ___ _  _____ _______ ___ ___ ________
+# / _ \ |/ / -_) __(_-</ -_) -_) __/ __/
+# \___/___/\__/_/ /___/\__/\__/_/ /_/
+#
+  overseerr:
+    container_name: Overseerr
+    image: sctx/overseerr:latest
+    environment:
+      - LOG_LEVEL=info
+      - PUID=${UID}
+      - PGID=${GID}
+      - TZ=${TZ}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${VOLUMEN}/overseerr:/app/config
+    ports:
+      - "${PORT_OVERSEERR}:5055"
+    restart: unless-stopped
+#      __    __
+#  ___/ /__ / /_ _____ ____
+# / _  / -_) / // / _ `/ -_)
+# \_,_/\__/_/\_,_/\_, /\__/
+#                /___/
+  deluge:
+    container_name: Deluge
+    image: lscr.io/linuxserver/deluge:latest
+    environment:
+      - DELUGE_LOGLEVEL=error
+      - PUID=${UID}
+      - PGID=${GID}
+      - TZ=${TZ}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${VOLUMEN}/deluge:/config
+      - ${DIRDOWN}:/downloads
+    ports:
+      - "${PORT_DELUGE}:8112"
+      - "6881:6881"
+      - "6881:6881/udp"
+    restart: unless-stopped
+#                         __
+#    ___  _______ _    __/ /__ _________
+#   / _ \/ __/ _ \ |/|/ / / _ `/ __/ __/
+#  / .__/_/  \___/__,__/_/\_,_/_/ /_/
+# /_/
+  prowlarr: # Indexer manager for Sonarr & Radarr
+    container_name: Prowlarr
+    image: lscr.io/linuxserver/prowlarr:latest
+    environment:
+      - PUID=${UID}
+      - PGID=${GID}
+      - TZ=${TZ}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${VOLUMEN}/prowlarr:/config
+    ports:
+      - "${PORT_PROWLARR}:9696"
+    restart: unless-stopped
+#                __
+#   _______ ____/ /__ _________
+#  / __/ _ `/ _  / _ `/ __/ __/
+# /_/  \_,_/\_,_/\_,_/_/ /_/
+#
+  radarr:
+    container_name: Radarr
+    image: lscr.io/linuxserver/radarr:latest
+    environment:
+      - PUID=${UID}
+      - PGID=${GID}
+      - TZ=${TZ}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${VOLUMEN}/radarr:/config
+      - ${DIRDOWN}:/downloads
+    ports:
+      - "${PORT_RADARR}:7878"
+    restart: unless-stopped
+#
+#   ___ ___  ___  ___ _________
+#  (_-</ _ \/ _ \/ _ `/ __/ __/
+# /___/\___/_//_/\_,_/_/ /_/
+#
+  sonarr: # TV show search agent
+    container_name: Sonarr
+    image: lscr.io/linuxserver/sonarr:latest
+    environment:
+      - PUID=${UID}
+      - PGID=${GID}
+      - TZ=${TZ}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${VOLUMEN}/sonarr:/config
+      - ${DIRDOWN}/downloads
+    ports:
+      - "${PORT_SONARR}:8989"
+    restart: unless-stopped
+#    _____                      __
+#   / _/ /__ ________ ___ ___  / /  _____ ________
+#  / _/ / _ `/ __/ -_|_-</ _ \/ / |/ / -_) __/ __/
+# /_//_/\_,_/_/  \__/___/\___/_/|___/\__/_/ /_/
+#
+  flaresolverr: # Proxy server to bypass Cloudflare protection
+    container_name: FlareSolverr
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    environment:
+      - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
+      - LOG_HTML=${LOG_HTML:-false}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - TEST_URL="https://www.debian.org"
+      - TZ=${TZ}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "${PORT_FLARESOLVERR}:8191"
+    restart: unless-stopped
+#    __       _          __     ____
+#   / /  ___ (_)_ _  ___/ /__ _/ / /
+#  / _ \/ -_) /  ' \/ _  / _ `/ / /
+# /_//_/\__/_/_/_/_/\_,_/\_,_/_/_/
+#
+  heimdall:
+    container_name: Heimdall
+    image: lscr.io/linuxserver/heimdall:latest
+    environment:
+      - PUID=${UID}
+      - PGID=${GID}
+      - TZ=${TZ}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${VOLUMEN}/heimdall:/config
+    ports:
+      - "${PORT_HEIMDALL}:80"
+      - "443:443"
+    restart: unless-stopped
+#    ____ __    __
+#   / _(_) /__ / /  _______ _    _____ ___ ____
+#  / _/ / / -_) _ \/ __/ _ \ |/|/ (_-</ -_) __/
+# /_//_/_/\__/_.__/_/  \___/__,__/___/\__/_/
+#
+  file-browser:
+    container_name: FileBrowser
+    image: filebrowser/filebrowser:latest
+    user: ${UID}:${GID}
+    volumes:
+      - ${DIRDOWN}:/srv
+      - ${VOLUMEN}/filebrowser/database.db:/database.db
+    ports:
+      - "${PORT_FILEBROWSER}:80"
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped

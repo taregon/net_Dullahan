@@ -1,0 +1,29 @@
+https://stackoverflow.com/a/73767841
+https://github.com/sct/overseerr/blob/develop/docs/getting-started/installation.md
+https://dockstarter.com/overrides/nginxproxymanager/
+https://saturncloud.io/blog/how-to-install-docker-registry-on-fedora-over-digitalocean/
+https://dille.name/blog/2018/07/16/handling-file-permissions-when-writing-to-volumes-from-docker-containers/
+sudo mkdir -p /opt/{data/{downloads/{complete,incomplete},media/{anime,movies,series}},docker,mediaserver}
+
+=============================================
+1.	revisar el GUID y UID del usuario que hara la instaladion (osiris)
+	usar el comando: "id" y agrega esos numeros al archivo dullahan.env
+
+2.	crear las carpetas para los archivos de CONFIGURACION
+	sudo mkdir -p /srv/docker-data/dullahan/{overseerr,deluge,prowlarr,sonarr,radarr,heimdall}
+
+3.	dar permisos al usuario 
+	sudo chown -Rv $USER:$USER /srv/docker-data/
+
+=============================================
+1.	Crear la base de datos para el explorador
+
+	mkdir -p /srv/docker-data/dullahan/filebrowser/
+	touch /srv/docker-data/dullahan/filebrowser/database.db
+
+=============================================
+1.	Crear la red
+	sudo docker network create net_dullahan
+
+2.	crear las carpetas para las DESCARGAS
+	mkdir -p ~/download/
