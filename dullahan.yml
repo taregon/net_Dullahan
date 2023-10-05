@@ -1,16 +1,3 @@
-# Admin password: deluge
-# flaresolverr puede funcionar con Prometheus https://github.com/FlareSolverr/FlareSolverr#environment-variables
-# https://academy.pointtosource.com/containers/sonarr-radarr-prowlarr/
-# https://blog.ayjc.net/posts/heimdall/
-# https://github.com/FlareSolverr/FlareSolverr/wiki/How-to-enable-debug-and-html-trace
-# https://github.com/TechSquidTV/UltimateHomeServer
-# https://raw.githubusercontent.com/TRaSH-/Guides-Synology-Templates/main/docker-compose/docker-compose.yml
-# https://www.rapidseedbox.com/blog/flaresolverr-guide
-# https://www.zenrows.com/blog/flaresolverr#set-up-with-jackett
-# https://github.com/fr3fou/home/blob/main/apps/prowlarr/prowlarr.yaml
-# https://github.com/navilg/media-stack
-# https://www.manelrodero.com/blog/instalacion-de-radarr-en-docker
-# https://technotim.live/posts/meet-file-browser/
 # NETWORKS =======================
 networks:
   default:
