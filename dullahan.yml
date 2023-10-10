@@ -1,3 +1,5 @@
+# * UMASK_SET=022 suelen definirlo en los contenedores
+
 # NETWORKS =======================
 networks:
   default:
@@ -11,7 +13,7 @@ services:
 # / _ \ |/ / -_) __(_-</ -_) -_) __/ __/
 # \___/___/\__/_/ /___/\__/\__/_/ /_/
 #
-  overseerr:
+  overseerr: # Media discovery tool built to work with Plex ecosystem
     container_name: Overseerr
     image: sctx/overseerr:latest
     environment:
@@ -30,7 +32,7 @@ services:
 # / _  / -_) / // / _ `/ -_)
 # \_,_/\__/_/\_,_/\_, /\__/
 #                /___/
-  deluge:
+  deluge: # Lightweight BitTorrent client
     container_name: Deluge
     image: lscr.io/linuxserver/deluge:latest
     environment:
@@ -70,7 +72,7 @@ services:
 #  / __/ _ `/ _  / _ `/ __/ __/
 # /_/  \_,_/\_,_/\_,_/_/ /_/
 #
-  radarr:
+  radarr: # Sonarr, but for Movies
     container_name: Radarr
     image: lscr.io/linuxserver/radarr:latest
     environment:
@@ -127,7 +129,7 @@ services:
 #  / _ \/ -_) /  ' \/ _  / _ `/ / /
 # /_//_/\__/_/_/_/_/\_,_/\_,_/_/_/
 #
-  heimdall:
+  heimdall: # Dashboard for all web application
     container_name: Heimdall
     image: lscr.io/linuxserver/heimdall:latest
     environment:
@@ -146,7 +148,7 @@ services:
 #  / _/ / / -_) _ \/ __/ _ \ |/|/ (_-</ -_) __/
 # /_//_/_/\__/_.__/_/  \___/__,__/___/\__/_/
 #
-  file-browser:
+  file-browser: # File management interface
     container_name: FileBrowser
     image: filebrowser/filebrowser:latest
     user: ${UID}:${GID}
