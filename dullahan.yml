@@ -25,29 +25,33 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${VOLUMEN}/overseerr:/app/config
     ports:
-      - "${PORT_OVERSEERR}:5055"
+      - "${PORT_OVERSE}:5055"
     restart: unless-stopped
-#      __    __
-#  ___/ /__ / /_ _____ ____
-# / _  / -_) / // / _ `/ -_)
-# \_,_/\__/_/\_,_/\_, /\__/
-#                /___/
-  deluge: # Lightweight BitTorrent client
-    container_name: Deluge
-    image: lscr.io/linuxserver/deluge:latest
+#   __                          _         _
+#  / /________ ____  ___ __ _  (_)__ ___ (_)__  ___
+# / __/ __/ _ `/ _ \(_-</  ' \/ (_-<(_-</ / _ \/ _ \
+# \__/_/  \_,_/_//_/___/_/_/_/_/___/___/_/\___/_//_/
+#
+services: # BitTorrent client
+  transmission:
+    container_name: Transmission
+    image: lscr.io/linuxserver/transmission:latest
     environment:
-      - DELUGE_LOGLEVEL=error
       - PUID=${UID}
       - PGID=${GID}
       - TZ=${TZ}
+      - USER=admin
+      - PASS=admin
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${VOLUMEN}/deluge:/config
       - ${DIRDOWN}:/downloads
+      - ${VOLUMEN}/transmission:/config
+      - ${VOLUMEN}/transmission/torrent:/watch
     ports:
-      - "${PORT_DELUGE}:8112"
-      - "6881:6881"
-      - "6881:6881/udp"
+      - 9091:9091
+      - "${PORT_TRANSM}:9696"
+      - 51413:51413
+      - 51413:51413/udp
     restart: unless-stopped
 #                         __
 #    ___  _______ _    __/ /__ _________
@@ -65,7 +69,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${VOLUMEN}/prowlarr:/config
     ports:
-      - "${PORT_PROWLARR}:9696"
+      - "${PORT_PROWLA}:9696"
     restart: unless-stopped
 #                __
 #   _______ ____/ /__ _________
@@ -122,7 +126,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - "${PORT_FLARESOLVERR}:8191"
+      - "${PORT_FLARES}:8191"
     restart: unless-stopped
 #    __       _          __     ____
 #   / /  ___ (_)_ _  ___/ /__ _/ / /
@@ -140,7 +144,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${VOLUMEN}/heimdall:/config
     ports:
-      - "${PORT_HEIMDALL}:80"
+      - "${PORT_HEIMDA}:80"
       - "443:443"
     restart: unless-stopped
 #    ____ __    __
@@ -156,7 +160,7 @@ services:
       - ${DIRDOWN}:/srv
       - ${VOLUMEN}/filebrowser/database.db:/database.db
     ports:
-      - "${PORT_FILEBROWSER}:80"
+      - "${PORT_FILEBR}:80"
     security_opt:
       - no-new-privileges:true
     restart: unless-stopped

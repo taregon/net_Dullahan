@@ -11,3 +11,21 @@
 # https://github.com/navilg/media-stack
 # https://www.manelrodero.com/blog/instalacion-de-radarr-en-docker
 # https://technotim.live/posts/meet-file-browser/
+# https://code.mendhak.com/run-docker-through-vpn-container/
+# cleanmyarr, gluetun, checkmk, kasm
+# https://github.com/navilg/media-stack/tree/main # GUIA
+# https://www.netmentor.es/entrada/biblioteca-musica-lidarr # LIDARR
+# https://elblogdelazaro.org/posts/2023-01-23-universo-arr-parte-v-radarr/ #RADARR
+# https://noted.lol/llamagpt/ # LLAMAGPT
+# https://noted.lol/netdata-prometheus-and-grafana/ # GRAFANA
+# https://dashy.to/docs/widgets/#system-resource-monitoring #DASHY
+# https://www.smarthomebeginner.com/gluetun-docker-guide/ # GLUETUN
+# https://noted.lol/self-host-uptime-kuma/ # KUMA
+# https://www.mostlychris.com/emqx-is-the-perfect-mqtt-broker-to-view-your-traffic/ EMQX
+# https://noted.lol/olivetin-self-hosted-predefined-shell-commands/ # OLIVETIN
+# https://www.virtualizationhowto.com/2022/05/best-docker-containers-for-home-server/  # TAILSCALE
+# https://www.sismonda.com.ar/1256-2021-03-06-wireguard-y-pi-hole-utilizando-docker-en-ubuntu-20-04/ # WIREGUARD
+# https://noted.lol/ # como para entreneterese leyendo
+# https://feriman.com/earn-passive-income-with-honeygain/
+
+# https://iconduck.com/sets/personal-dashboard-icons-set

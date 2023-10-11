@@ -12,7 +12,7 @@ sudo mkdir -p /opt/{data/{downloads/{complete,incomplete},media/{anime,movies,se
 2.	crear las carpetas para los archivos de CONFIGURACION
 	sudo mkdir -p /srv/docker-data/dullahan/{overseerr,deluge,prowlarr,sonarr,radarr,heimdall}
 
-3.	dar permisos al usuario 
+3.	dar permisos al usuario
 	sudo chown -Rv $USER:$USER /srv/docker-data/
 
 =============================================
@@ -27,3 +27,13 @@ sudo mkdir -p /opt/{data/{downloads/{complete,incomplete},media/{anime,movies,se
 
 2.	crear las carpetas para las DESCARGAS
 	mkdir -p ~/download/
+
+=============================================
+1.	crear las carpetas para los archivos de HOMARR
+
+	mkdir -p /srv/docker-data/homarr/{config,icons,wallpaper}
+
+=============================================
+1.	crear las carpetas para los archivos de TRANSMISSION
+
+	mkdir -p /srv/docker-data/dullahan/transmission/torrent/
