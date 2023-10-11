@@ -1,4 +1,5 @@
 # * UMASK_SET=022 suelen definirlo en los contenedores
+# https://maglit.me/wachuuchochudmate - Puedes cambiar el logo en FileBroswer
 
 # NETWORKS =======================
 networks:
@@ -41,7 +42,7 @@ services: # BitTorrent client
       - PGID=${GID}
       - TZ=${TZ}
       - USER=admin
-      - PASS=admin
+      - PASS=Shikimori..
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${DIRDOWN}:/downloads

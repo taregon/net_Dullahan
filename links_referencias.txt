@@ -27,5 +27,6 @@
 # https://www.sismonda.com.ar/1256-2021-03-06-wireguard-y-pi-hole-utilizando-docker-en-ubuntu-20-04/ # WIREGUARD
 # https://noted.lol/ # como para entreneterese leyendo
 # https://feriman.com/earn-passive-income-with-honeygain/
-
+# https://github.com/NayamAmarshe/MagLit
+# https://gitlab.com/instantlinux/docker-tools/-/blob/master/images/nut-upsd/Dockerfile
 # https://iconduck.com/sets/personal-dashboard-icons-set
