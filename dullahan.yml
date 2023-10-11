@@ -48,8 +48,7 @@ services: # BitTorrent client
       - ${VOLUMEN}/transmission:/config
       - ${VOLUMEN}/transmission/torrent:/watch
     ports:
-      - 9091:9091
-      - "${PORT_TRANSM}:9696"
+      - "${PORT_TRANSM}:9091"
       - 51413:51413
       - 51413:51413/udp
     restart: unless-stopped
