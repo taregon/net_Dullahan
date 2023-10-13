@@ -33,8 +33,7 @@ services:
 # / __/ __/ _ `/ _ \(_-</  ' \/ (_-<(_-</ / _ \/ _ \
 # \__/_/  \_,_/_//_/___/_/_/_/_/___/___/_/\___/_//_/
 #
-services: # BitTorrent client
-  transmission:
+  transmission: # BitTorrent client
     container_name: Transmission
     image: lscr.io/linuxserver/transmission:latest
     environment:
@@ -133,7 +132,7 @@ services: # BitTorrent client
 #  /  ' \/ -_) _  / // (_-</ _ `/
 # /_/_/_/\__/\_,_/\_,_/___/\_,_/
 #
-  medusa:
+  medusa: # Automatic video library manager for TV Shows
     container_name: Medusa
     image: lscr.io/linuxserver/medusa:latest
     environment:
