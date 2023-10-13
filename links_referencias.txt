@@ -30,3 +30,16 @@
 # https://github.com/NayamAmarshe/MagLit
 # https://gitlab.com/instantlinux/docker-tools/-/blob/master/images/nut-upsd/Dockerfile
 # https://iconduck.com/sets/personal-dashboard-icons-set
+# https://www.technologyscout.net/2020/05/running-dash-in-docker/
+# HUGINN https://github.com/huginn/huginn
+# HUGINN https://gideonwolfe.com/posts/sysadmin/huginn/setup/
+# https://gideonwolfe.com/posts/sysadmin/docker/watchtower/
+# https://github.com/theotherp/nzbhydra2
+# https://gideonwolfe.com/posts/sysadmin/tig/advanced/
+# https://github.com/pawelmalak/flame
+# https://noted.lol/midarr-a-minimal-lightweight-media-server/
+# https://www.authelia.com/
+# https://freshbrewed.science/2023/05/09/uptime-rundeck.html #KUMA con alertas
+# https://freshbrewed.science/2022/03/16/uptime-kuma.html #KUMA con alertas
+# MEDUSA    https://blog.chokunplayz.com/2023/05/20/how-to-setup-the-ultimate-anime-downloading-streaming-setup/
+# Varios repos https://docs.watercalmx.com/docker-jing-xiang
