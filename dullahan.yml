@@ -158,7 +158,7 @@ services:
       - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
       - LOG_HTML=${LOG_HTML:-false}
       - LOG_LEVEL=${LOG_LEVEL:-info}
-      - TEST_URL="https://www.debian.org"
+      - TEST_URL="https://www.debian.org"   # Google por defecto
       - TZ=${TZ}
     volumes:
       - /etc/localtime:/etc/localtime:ro

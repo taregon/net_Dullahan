@@ -43,3 +43,51 @@
 # https://freshbrewed.science/2022/03/16/uptime-kuma.html #KUMA con alertas
 # MEDUSA    https://blog.chokunplayz.com/2023/05/20/how-to-setup-the-ultimate-anime-downloading-streaming-setup/
 # Varios repos https://docs.watercalmx.com/docker-jing-xiang
+https://hub.docker.com/r/linuxserver/resilio-sync
+https://hub.docker.com/r/linuxserver/fail2ban
+https://hub.docker.com/r/linuxserver/syslog-ng
+https://github.com/kiranshila/Doplarr
+https://docs.theme-park.dev/themes/librespeed/
+https://gist.github.com/TehloWasTaken/fd0fd217fc2544654909bba4c5596773
+https://blog.thelazyfox.xyz/block-malicious-connections-with-crowdsec-as-intrusion-prevention-system-on-top-of-swag/
+https://domopi.eu/glances-un-outil-de-monitoring/
+
+# Docker Secrets https://earthly.dev/blog/docker-secrets/
+# Docker Secrets https://www.influxdata.com/blog/detailed-guide-docker-secrets/
+
+https://github.com/alexjustesen/speedtest-tracker
+https://crazymax.dev/diun/install/docker/
+
+id $whoami
+
+https://fleet.linuxserver.io/
+https://github.com/sitespeedio/sitespeed.io
+https://elblogdelazaro.org/posts/2022-12-19-universo-arr-prowlarr-lidarr-sonarr-radarr-parte-i/
+# WATCHTOWER https://drfrankenstein.co.uk/2023/04/30/watchtower-automated-updates-in-container-manager-on-a-synology-nas/
+# WATCHTOWER https://codeopolis.com/posts/use-watchtower-to-automate-docker-container-updates/
+# DIUN https://www.blackvoid.club/diun-friendly-docker-image-update-notifier/
+# DIUN https://spad.uk/monitoring-for-docker-image-updates-with-diun/
+
+#Docker Secrets https://www.baeldung.com/ops/docker-secrets
+#Docker Secrets https://www.rockyourcode.com/using-docker-secrets-with-docker-compose/
+
+#pgAdmin https://elblogdelazaro.org/posts/2023-05-29-docker-gestion-de-bbdd-postgres-con-pgadmin/
+
+#homepage https://elblogdelazaro.org/posts/2023-06-21-docker-homepage-dashboard/
+
+#Lychee https://www.marcodaleo.com/posts/lychee-photos/
+
+#WireGuard https://www.marcodaleo.com/posts/wireguard-vpn/
+#Umami https://elblogdelazaro.org/posts/2021-07-12-adios-a-google-analitycs-con-umami/
+#postgres backup https://elblogdelazaro.org/posts/2023-07-03-docker-backup-automaticos-de-tus-bases-de-datos-postgres/
+#Jellyseerr https://elblogdelazaro.org/posts/2023-02-06-universo-arr-parte-vi-jellyseerr/
+
+#TICK TE CONVIENE https://elblogdelazaro.org/posts/2020-03-12-docker-tick-telegraf+tnfluxdb+chrnograf+kapacitor/
+#TICK TE CONVIENE https://elblogdelazaro.org/posts/2020-03-16-kapacitor-envio-de-alarmas-en-telegram/
+
+#Unmanic https://elblogdelazaro.org/posts/2021-04-19-compresi__n-h265-para-videos-con-unmanic/
+#Tdarr es como Unmanic https://elblogdelazaro.org/posts/2021-05-17-primeros-pasos-con-tdarr/
+#camaras https://www.scrypted.app/
+#Homarr https://noted.lol/homarr-a-simple-self-hosted-and-lightweight-server-homepage/
+#OLLAMA https://noted.lol/ollama/
+#mailcow esta curioso https://docs.mailcow.email/
